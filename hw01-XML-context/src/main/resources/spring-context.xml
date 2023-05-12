@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="examFormatter" class="ru.otus.spring.service.ExamFormatterImpl"/>
+    <bean id="csvExamDaoImpl" class="ru.otus.spring.dao.CsvExamDaoImpl">
+        <constructor-arg index="0" type="java.lang.String" value="/exam.csv"/>
+    </bean>
+    <bean id="ioServiceStreams" class="ru.otus.spring.service.IOServiceStreams">
+        <constructor-arg index="0" value="#{T(System).out }"/>
+        <constructor-arg index="1" value="#{T(System).in }"/>
+    </bean>
+    <bean id="examService" class="ru.otus.spring.service.ExamServiceImpl">
+        <constructor-arg index="0" ref="ioServiceStreams"/>
+        <constructor-arg index="1" ref="csvExamDaoImpl"/>
+        <constructor-arg index="2" ref="examFormatter"/>
+    </bean>
+    <bean id="applicationRunner" class="ru.otus.spring.application.ApplicationRunner">
+        <constructor-arg index="0" ref="ioServiceStreams"/>
+        <constructor-arg index="1" ref="examService"/>
+    </bean>
+</beans>

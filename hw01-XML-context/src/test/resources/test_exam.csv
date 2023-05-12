@@ -1,0 +1,6 @@
+question_id,question_name,right_answer_id,first_answer,second_answer,third_answer,fourth_answer
+1,What does GUI stand for?,1,Graphical User Interface,Gimme Ur Internet,Grand User Interface,Graphical Useful Interface
+2,Which one of the following is not a correct array declaration?,1,Int arr[] = int [5] new,Int [] arr = new int[5],Int arr[] = new int[5],Int arr[] = new int[5]
+3,The TreeMap class is used to implement,1,Map interface,NavigableMap,AbstractMap Class,All of the above
+4,How many classes we are able to extend in Java?,1,Only one class,Two class,Three class,Four class
+5,Which keyword is used for using interface in class?,3,Extend,Throw,Implements,None of the above
